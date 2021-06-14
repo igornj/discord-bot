@@ -26,7 +26,7 @@ bot.on('message', async msg =>{
     if (msg.content === '-upper' || msg.content === '-UPPER' ) {
 
         try{
-          const attachment = new MessageAttachment('/');
+          const attachment = new MessageAttachment(imgPath);
           await msg.channel.send(`Rolê N° ${randomID(1, 999)}`, attachment);
 
         }catch(e){
