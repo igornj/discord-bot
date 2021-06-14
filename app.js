@@ -16,24 +16,33 @@ function randomID(min, max) {
 
 
 let imgPath;
-bot.on('message', msg =>{
+bot.on('message', async msg =>{
 
-    imgPath = `./Upper_data_base/${randomID(1, 170)}.jpg`;
+    imgPath = `./Upper_data_base/${randomID(1, 168)}.jpg`;
     console.log(imgPath); 
 
     if(msg.author.bot) return;
 
     if (msg.content === '-upper' || msg.content === '-UPPER' ) {
 
-        const attachment = new MessageAttachment(imgPath);
-        msg.channel.send(`Rolê N° ${randomID(1, 999)}`, attachment);
+        try{
+          const attachment = new MessageAttachment('/');
+          await msg.channel.send(`Rolê N° ${randomID(1, 999)}`, attachment);
+
+        }catch(e){
+          console.log('Error: ', e);
+          const attachment = new MessageAttachment(`./Upper_data_base/errormesageDIIN.jpg`);
+          msg.channel.send(`Esse rolê ainda não aconteceu meu caro, digite o comando "-upper" novamente`, attachment);
+          return;
+        
+        }
+   
     }
     
 });
 
 
-bot.login('your token here'); 
-
+bot.login(''); 
 
 
 
