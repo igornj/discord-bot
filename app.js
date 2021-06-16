@@ -1,7 +1,11 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-
 const { MessageAttachment } = require('discord.js');
+
+
+const filesSystem = require('./filesystem');
+const filesArray = filesSystem.filesExport;
+
 
 bot.on('ready', () => {
     console.log(`Bot conectado ${bot.user.tag}`);
@@ -18,8 +22,7 @@ function randomID(min, max) {
 let imgPath;
 bot.on('message', async msg =>{
 
-    imgPath = `./Upper_data_base/${randomID(1, 168)}.jpg`;
-    console.log(imgPath); 
+    imgPath = `./Upper_data_base/${filesArray[randomID(1, 236)]}`
 
     if(msg.author.bot) return;
 
