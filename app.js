@@ -9,6 +9,10 @@ const filesArray = filesSystem.filesExport;
 
 bot.on('ready', () => {
     console.log(`Bot conectado ${bot.user.tag}`);
+
+    bot.user.setActivity("A Festa acabou!📢⛔", {
+      type: "PLAYING",
+    });
 });
 
 
@@ -17,7 +21,6 @@ function randomID(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
-
 
 let imgPath;
 bot.on('message', async msg =>{
