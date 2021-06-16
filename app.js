@@ -22,11 +22,12 @@ function randomID(min, max) {
 let imgPath;
 bot.on('message', async msg =>{
 
-    imgPath = `./Upper_data_base/${filesArray[randomID(1, 235)]}`;
+    imgPath = `./Upper_data_base/${filesArray[randomID(0, filesArray.length)]}`;
 
     if(msg.author.bot) return;
 
     if (msg.channel.id === '756305318866059384' && msg.content === '-upper' || msg.content === '-UPPER' ) {
+
 
         try{
           const attachment = new MessageAttachment(imgPath);
