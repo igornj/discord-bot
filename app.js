@@ -26,7 +26,7 @@ bot.on('message', async msg =>{
 
     if(msg.author.bot) return;
 
-    if (msg.channel.id === '756305318866059384' && msg.content === '-upper' || msg.content === '-UPPER' ) {
+    if (msg.channel.id === '854733997628325908' && msg.content === '-upper' || msg.content === '-UPPER' ) {
 
 
         try{
