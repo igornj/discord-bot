@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const { MessageAttachment } = require('discord.js');
@@ -48,7 +51,7 @@ bot.on('message', async msg =>{
     
 });
 
-bot.login(''); 
+bot.login(process.env.TOKEN); 
 
 
 
