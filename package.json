@@ -1,0 +1,27 @@
+{
+  "name": "discordbotmoments",
+  "version": "1.0.0",
+  "description": "A discord bot that store or show random images from: databases or random urls",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Igor Nunes",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.935.0",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
