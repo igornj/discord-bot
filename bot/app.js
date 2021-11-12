@@ -5,6 +5,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const { MessageAttachment } = require('discord.js');
 const readFilesAws = require('./awsListObjects');
+const randomEmoji = require('random-unicode-emoji');
 
 
 function randomID(min, max) {
@@ -26,6 +27,8 @@ bot.on('ready', () => {
 
 let imgPath;
   bot.on('message', msg =>{
+    
+      const emoji = randomEmoji.random({count: 1})
 
       readFilesAws.readFiles()
       .then((data) => discordMessage(data))
@@ -33,7 +36,7 @@ let imgPath;
 
         
        async function discordMessage(data){
-        console.log(data);
+        //console.log(data);
         if(msg.author.bot) return;
 
         if (msg.channel.id === '854733997628325908' && msg.content === '-upper' || msg.content === '-UPPER' ) {
@@ -41,8 +44,8 @@ let imgPath;
             try{
               imgPath = `https://upperphotos.s3.us-east-2.amazonaws.com/${data[randomID(0, data.length)]}`;
               const attachment = new MessageAttachment(imgPath);
-              await msg.channel.send(`Rolê N° ${randomID(1, 999)} 📸`, attachment);
-              msg.channel.send('Para mandar mais rolês do clan acesse: https://discord-bot-upload.herokuapp.com  📢')
+              await msg.channel.send(`***Rolê N° ${randomID(1, 999)} ${emoji}***`, attachment);
+              msg.channel.send('📢 **Para mandar mais rolês do clan acesse:** https://discord-bot-authentication.firebaseapp.com/')
 
             }catch(e){
               console.log('Error: ', e);
