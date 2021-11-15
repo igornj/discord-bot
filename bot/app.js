@@ -45,7 +45,7 @@ let imgPath;
               imgPath = `https://upperphotos.s3.us-east-2.amazonaws.com/${data[randomID(0, data.length)]}`;
               const attachment = new MessageAttachment(imgPath);
               await msg.channel.send(`***Rolê N° ${randomID(1, 999)} ${emoji}***`, attachment);
-              msg.channel.send('📢 **Para mandar mais rolês do clan acesse:** https://discord-bot-authentication.firebaseapp.com/')
+              msg.channel.send(`📢 **Para mandar mais rolês do clan acesse:** ${process.env.WEB_APP}`);
 
             }catch(e){
               console.log('Error: ', e);
